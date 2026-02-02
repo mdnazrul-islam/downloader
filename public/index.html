@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamVault - YouTube Downloader</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root { --primary: #ff0000; --bg: #0f172a; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); color: white; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
+        .container { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); padding: 40px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.5); width: 90%; max-width: 500px; text-align: center; border: 1px solid rgba(255,255,255,0.1); }
+        h1 { font-size: 2rem; margin-bottom: 25px; color: #fff; }
+        h1 span { color: var(--primary); }
+        .input-group { margin-bottom: 20px; text-align: left; }
+        input, select { width: 100%; padding: 12px; margin-top: 8px; border-radius: 8px; border: none; background: rgba(255,255,255,0.1); color: white; outline: none; box-sizing: border-box; }
+        button { width: 100%; padding: 15px; margin-top: 20px; border: none; border-radius: 8px; background: var(--primary); color: white; font-weight: bold; cursor: pointer; transition: 0.3s; font-size: 1rem; }
+        button:hover { background: #cc0000; transform: translateY(-2px); }
+        .footer { margin-top: 20px; font-size: 0.8rem; color: #94a3b8; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Stream<span>Vault</span></h1>
+    <form action="/download" method="GET">
+        <div class="input-group">
+            <label><i class="fab fa-youtube"></i> Video URL</label>
+            <input type="text" name="url" placeholder="Paste link here..." required>
+        </div>
+
+        <div style="display: flex; gap: 10px;">
+            <div class="input-group" style="flex: 1;">
+                <label>Format</label>
+                <select name="format">
+                    <option value="mp4">MP4 (Video)</option>
+                    <option value="mp3">MP3 (Audio)</option>
+                </select>
+            </div>
+            <div class="input-group" style="flex: 1;">
+                <label>Quality</label>
+                <select name="quality">
+                    <option value="highestvideo">Highest</option>
+                    <option value="134">360p</option>
+                    <option value="136">720p</option>
+                </select>
+            </div>
+        </div>
+
+        <button type="submit"><i class="fas fa-download"></i> Start Download</button>
+    </form>
+    <div class="footer">Built with ❤️ for personal use</div>
+</div>
+
+</body>
+</html>
